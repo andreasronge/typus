@@ -42,19 +42,18 @@ gem "jquery-rails"
 gem "ckeditor-rails", "0.0.2"
 
 # Alternative authentication
-gem "devise", "~> 1.4.3"
+gem "devise", "~> 1.4.7"
 
 # Asset Management with Dragonfly
-gem "dragonfly", "~> 0.9"
+gem "dragonfly", "~> 0.9.8"
 gem "rack-cache", :require => "rack/cache"
 
 # Asset Management with Paperclip
-gem "paperclip", "~> 2.3.16"
+gem "paperclip", "~> 2.4.2"
 
 # MongoDB
-gem "mongoid", "~> 2.1"
-gem 'bson'
-gem "bson_ext", "~> 1.3"
+gem "mongoid", "~> 2.3.0"
+gem "bson_ext", "~> 1.4.0"
 
 group :test do
   gem "shoulda-context", "~> 1.0.0.beta1"

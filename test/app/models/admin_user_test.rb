@@ -36,4 +36,13 @@ class AdminUserTest < ActiveSupport::TestCase
     assert_equal Typus::Configuration.roles.keys.sort, AdminUser.roles
   end
 
+  test "validate :password" do
+    admin_user = FactoryGirl.build(:admin_user, :password => "00000")
+    assert admin_user.invalid?
+    assert_equal "is too short (minimum is 6 characters)", admin_user.errors[:password].first
+
+    admin_user = FactoryGirl.build(:typus_user, :password => "000000")
+    assert admin_user.valid?
+  end
+
 end

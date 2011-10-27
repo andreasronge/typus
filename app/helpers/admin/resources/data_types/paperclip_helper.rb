@@ -13,7 +13,7 @@ module Admin::Resources::DataTypes::PaperclipHelper
       attribute_i18n = @item.class.human_attribute_name(attribute)
       label_text = <<-HTML
 #{attribute_i18n}
-<small>#{link_to Typus::I18n.t("Remove"), { :action => 'update', :id => @item.id, :attribute => attribute, :_continue => true }, :confirm => Typus::I18n.t("Are you sure?")}</small>
+<small>#{link_to Typus::I18n.t("Remove"), { :action => 'update', :id => @item.id, :_nullify => attribute, :_continue => true }, :confirm => Typus::I18n.t("Are you sure?")}</small>
       HTML
       label_text.html_safe
     end

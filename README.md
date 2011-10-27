@@ -32,7 +32,7 @@ Add **Typus** to your `Gemfile`
     gem 'typus'
 
     # Bundle edge Typus instead:
-    # gem 'typus', :git => 'git://github.com/typus/typus.git'
+    # gem 'typus', :git => 'git://github.com/fesplugas/typus.git'
 
 Update your bundle, run the generator and start the application server:
 
@@ -46,7 +46,7 @@ and go to <http://0.0.0.0:3000/admin>.
 
 To test, clone the repo and run the following commands:
 
-    $ git clone git://github.com/typus/typus.git
+    $ git clone git://github.com/fesplugas/typus.git
     $ bundle install --path vendor/bundle
     $ bundle exec rake
 
@@ -60,15 +60,15 @@ user to be able to run tests.
 - [Documentation](http://docs.typuscmf.com/)
 - [RubyGems][typus_gem]
 - [Mailing List](http://groups.google.com/group/typus)
-- [Contributors List](http://github.com/typus/typus/contributors)
+- [Contributors List](http://github.com/fesplugas/typus/contributors)
 
 ## License
 
 **Typus** is released under the MIT license.
 
-[typus]: http://github.com/typus/typus
+[typus]: http://github.com/fesplugas/typus
 [typus_demo]: http://demo.typuscmf.com/
-[typus_locales]: https://github.com/typus/typus/tree/master/config/locales
+[typus_locales]: https://github.com/fesplugas/typus/tree/master/config/locales
 [typus_gem]: http://rubygems.org/gems/typus
 [paperclip]: http://rubygems.org/gems/paperclip
 [dragonfly]: http://rubygems.org/gems/dragonfly

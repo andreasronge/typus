@@ -5,7 +5,7 @@ class Admin::ResourcesController < Admin::BaseController
   include Typus::Controller::Format
   include Typus::Controller::Headless
 
-  Whitelist = [:edit, :update, :destroy, :toggle, :position, :relate, :unrelate]
+  Whitelist = [:edit, :update, :destroy, :toggle]
 
   before_filter :get_model
   before_filter :set_context
