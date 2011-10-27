@@ -26,18 +26,30 @@ class ActiveSupport::TestCase
     ::ActiveRecord::Base.configurations[Rails.env]['adapter']
   end
 
-  def admin_sign_in
+  def build_admin
     @typus_user = FactoryGirl.create(:typus_user)
+  end
+
+  def admin_sign_in
+    build_admin
     set_session(@typus_user.id)
+  end
+
+  def build_editor
+    @typus_user = FactoryGirl.create(:typus_user, :email => "editor@example.com", :role => "editor")
   end
 
   def editor_sign_in
-    @typus_user = FactoryGirl.create(:typus_user, :email => "editor@example.com", :role => "editor")
+    build_editor
     set_session(@typus_user.id)
   end
 
-  def designer_sign_in
+  def build_designer
     @typus_user = FactoryGirl.create(:typus_user, :email => "designer@example.com", :role => "designer")
+  end
+
+  def designer_sign_in
+    build_designer
     set_session(@typus_user.id)
   end
 

@@ -1,6 +1,10 @@
 = 3.2.0 (unreleased)
 
-= 3.1.3 (unreleased)
+= 3.1.4
+
+ * [FIXED] Belongs to helper was not creating properly class ids.
+
+= 3.1.3
 
  * [CHANGED] Added `Typus.chosen` so we can disable "Chosen". This will
    be in Typus until "Chosen" supports remote data calls.
@@ -20,6 +24,8 @@
 
  * [CHANGED] We do not longer hide search boxes on Chosen. Apparently
    it has been fixed: https://github.com/harvesthq/chosen/commit/d4c7005b5c
+
+ * [FIXED] Detaching a Paperclip was not working.
 
 = 3.1.2
 

@@ -58,11 +58,8 @@ module Typus
 
           # Returns self if the password is correct, otherwise false.
           def authenticate(unencrypted_password)
-            if BCrypt::Password.new(password_digest) == unencrypted_password
-              self
-            else
-              false
-            end
+            equal = BCrypt::Password.new(password_digest) == unencrypted_password
+            equal ? self : false
           end
 
           # Encrypts the password into the password_digest attribute.
@@ -71,9 +68,9 @@ module Typus
             self.password_digest = BCrypt::Password.create(unencrypted_password)
           end
 
-          def password_must_be_strong
-            if password.present?
-              errors.add(:password, :too_short, :count => 7) unless password.size > 6
+          def password_must_be_strong(count = 6)
+            if password.present? && password.size < count
+              errors.add(:password, :too_short, :count => count)
             end
           end
 
