@@ -11,7 +11,7 @@ require "test_helper"
 class Admin::CategoriesControllerTest < ActionController::TestCase
 
   setup do
-    @request.session[:typus_user_id] = FactoryGirl.create(:typus_user).id
+    admin_sign_in
     @request.env['HTTP_REFERER'] = '/admin/categories'
   end
 
@@ -38,6 +38,13 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
 
     get :position, :id => second_category.id, :go => 'move_to_top'
     assert assigns(:item).position.eql?(1)
+  end
+
+  test "get position with not allowed go option" do
+    category = FactoryGirl.create(:category, :position => 1)
+    get :position, :id => category.id, :go => 'move_up'
+    assert_response :unprocessable_entity
+    assert_equal "Not allowed!", response.body
   end
 
 end

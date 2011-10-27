@@ -169,7 +169,6 @@ module Typus
       end
 
       def typus_user_id?
-        columns.map(&:name).include?(Typus.user_foreign_key)
       end
 
       def read_model_config
