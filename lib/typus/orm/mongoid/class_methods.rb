@@ -74,6 +74,10 @@ module Typus
           end
         end
 
+        def typus_user_id?
+          fields.keys.include?(Typus.user_foreign_key)
+        end
+
       end
     end
   end

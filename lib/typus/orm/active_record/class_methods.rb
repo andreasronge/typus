@@ -105,6 +105,10 @@ module Typus
           data.extract_settings.map(&:to_sym)
         end
 
+        def typus_user_id?
+          columns.map(&:name).include?(Typus.user_foreign_key)
+        end
+
       end
     end
   end
